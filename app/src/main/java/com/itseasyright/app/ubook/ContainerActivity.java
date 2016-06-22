@@ -1,6 +1,7 @@
 package com.itseasyright.app.ubook;
 
 import android.support.annotation.IdRes;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -32,108 +33,48 @@ public class ContainerActivity extends AppCompatActivity implements OnMenuTabCli
     @Override
     public void onMenuTabSelected(@IdRes int menuItemId) {
 
-        // TODO: NV Simplify codes - Method
-        //for Animation
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         switch (menuItemId){
             case R.id.homeTabButton:
-
-                tabIndex = 1;
-                if(selectedIndex > tabIndex)
-                {
-                    ft.setCustomAnimations(R.anim.slide_in_left, R.anim.abc_fade_out);
-                }
-                else
-                {
-                    ft.setCustomAnimations(R.anim.slide_in_right, R.anim.abc_fade_out);
-
-                }
-                selectedIndex = tabIndex;
-
-                ft.replace(R.id.fragmentContainer, new HomeFragment(), "HOME");
-                // Start the animated transition.
-                ft.commit();
+                //for Animation
+                tabAnimation(1, new HomeFragment(), "HOME");
                 break;
 
             case R.id.plannerTabButton:
-
-                tabIndex = 2;
-                if(selectedIndex > tabIndex)
-                {
-                    ft.setCustomAnimations(R.anim.slide_in_left, R.anim.abc_fade_out);
-                }
-                else
-                {
-                    ft.setCustomAnimations(R.anim.slide_in_right, R.anim.abc_fade_out);
-
-                }
-                selectedIndex = tabIndex;
-
-                ft.replace(R.id.fragmentContainer, new PlannerFragment(), "PLANNER");
-                // Start the animated transition.
-                ft.commit();
+                tabAnimation(2, new PlannerFragment(), "PLANNER");
                 break;
 
             case R.id.exploreTabButton:
-
-                tabIndex = 3;
-                if(selectedIndex > tabIndex)
-                {
-                    ft.setCustomAnimations(R.anim.slide_in_left, R.anim.abc_fade_out);
-                }
-                else
-                {
-                    ft.setCustomAnimations(R.anim.slide_in_right, R.anim.abc_fade_out);
-
-                }
-                selectedIndex = tabIndex;
-
-                ft.replace(R.id.fragmentContainer, new ExploreFragment(), "EXPLORE");
-                // Start the animated transition.
-                ft.commit();
+                tabAnimation(3, new ExploreFragment(), "EXPLORE");
                 break;
 
             case R.id.networkTabButton:
-
-                tabIndex = 4;
-                if(selectedIndex > tabIndex)
-                {
-                    ft.setCustomAnimations(R.anim.slide_in_left, R.anim.abc_fade_out);
-                }
-                else
-                {
-                    ft.setCustomAnimations(R.anim.slide_in_right, R.anim.abc_fade_out);
-
-                }
-                selectedIndex = tabIndex;
-
-                ft.replace(R.id.fragmentContainer, new NetworkFragment(), "NETWORK");
-                // Start the animated transition.
-                ft.commit();
+                tabAnimation(4, new NetworkFragment(), "NETWORK");
                 break;
 
             case R.id.profileTabButton:
-
-                tabIndex = 5;
-                if(selectedIndex > tabIndex)
-                {
-                    ft.setCustomAnimations(R.anim.slide_in_left, R.anim.abc_fade_out);
-                }
-                else
-                {
-                    ft.setCustomAnimations(R.anim.slide_in_right, R.anim.abc_fade_out);
-
-                }
-                selectedIndex = tabIndex;
-
-                ft.replace(R.id.fragmentContainer, new ProfileFragment(), "PROFILE");
-                // Start the animated transition.
-                ft.commit();
+                tabAnimation(5, new ProfileFragment(), "PROFILE");
                 break;
 
             default:
                 break;
         }
+    }
+
+    public void tabAnimation(int tabIndex, Fragment fragment,String name)
+    {
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+
+        if(selectedIndex > tabIndex)
+        {
+            ft.setCustomAnimations(R.anim.slide_in_left, R.anim.abc_fade_out);
+        }
+        else
+        {
+            ft.setCustomAnimations(R.anim.slide_in_right, R.anim.abc_fade_out);
+        }
+        selectedIndex = tabIndex;
+        ft.replace(R.id.fragmentContainer,  fragment, name);
+        ft.commit();
     }
 
     @Override

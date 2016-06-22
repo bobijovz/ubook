@@ -15,6 +15,9 @@ import com.roughike.bottombar.OnMenuTabClickListener;
 
 public class ContainerActivity extends AppCompatActivity implements OnMenuTabClickListener {
     private BottomBar mBottomBar;
+    int tabIndex;
+    int selectedIndex;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,46 +31,107 @@ public class ContainerActivity extends AppCompatActivity implements OnMenuTabCli
 
     @Override
     public void onMenuTabSelected(@IdRes int menuItemId) {
-        // TODO: NV Add custom animations for switching of tabs
+
+        // TODO: NV Simplify codes - Method
         //for Animation
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-
         switch (menuItemId){
             case R.id.homeTabButton:
 
+                tabIndex = 1;
+                if(selectedIndex > tabIndex)
+                {
+                    ft.setCustomAnimations(R.anim.slide_in_left, R.anim.abc_fade_out);
+                }
+                else
+                {
+                    ft.setCustomAnimations(R.anim.slide_in_right, R.anim.abc_fade_out);
 
-                ft.setCustomAnimations(R.anim.abc_fade_in, R.anim.abc_fade_out);
+                }
+                selectedIndex = tabIndex;
+
                 ft.replace(R.id.fragmentContainer, new HomeFragment(), "HOME");
                 // Start the animated transition.
                 ft.commit();
                 break;
 
             case R.id.plannerTabButton:
-                ft.setCustomAnimations(R.anim.abc_fade_in, R.anim.abc_fade_out);
+
+                tabIndex = 2;
+                if(selectedIndex > tabIndex)
+                {
+                    ft.setCustomAnimations(R.anim.slide_in_left, R.anim.abc_fade_out);
+                }
+                else
+                {
+                    ft.setCustomAnimations(R.anim.slide_in_right, R.anim.abc_fade_out);
+
+                }
+                selectedIndex = tabIndex;
+
                 ft.replace(R.id.fragmentContainer, new PlannerFragment(), "PLANNER");
                 // Start the animated transition.
                 ft.commit();
                 break;
 
             case R.id.exploreTabButton:
-                ft.setCustomAnimations(R.anim.abc_fade_in, R.anim.abc_fade_out);
+
+                tabIndex = 3;
+                if(selectedIndex > tabIndex)
+                {
+                    ft.setCustomAnimations(R.anim.slide_in_left, R.anim.abc_fade_out);
+                }
+                else
+                {
+                    ft.setCustomAnimations(R.anim.slide_in_right, R.anim.abc_fade_out);
+
+                }
+                selectedIndex = tabIndex;
+
                 ft.replace(R.id.fragmentContainer, new ExploreFragment(), "EXPLORE");
                 // Start the animated transition.
                 ft.commit();
                 break;
 
             case R.id.networkTabButton:
-                ft.setCustomAnimations(R.anim.abc_fade_in, R.anim.abc_fade_out);
+
+                tabIndex = 4;
+                if(selectedIndex > tabIndex)
+                {
+                    ft.setCustomAnimations(R.anim.slide_in_left, R.anim.abc_fade_out);
+                }
+                else
+                {
+                    ft.setCustomAnimations(R.anim.slide_in_right, R.anim.abc_fade_out);
+
+                }
+                selectedIndex = tabIndex;
+
                 ft.replace(R.id.fragmentContainer, new NetworkFragment(), "NETWORK");
                 // Start the animated transition.
                 ft.commit();
                 break;
 
             case R.id.profileTabButton:
-                ft.setCustomAnimations(R.anim.abc_fade_in, R.anim.abc_fade_out);
+
+                tabIndex = 5;
+                if(selectedIndex > tabIndex)
+                {
+                    ft.setCustomAnimations(R.anim.slide_in_left, R.anim.abc_fade_out);
+                }
+                else
+                {
+                    ft.setCustomAnimations(R.anim.slide_in_right, R.anim.abc_fade_out);
+
+                }
+                selectedIndex = tabIndex;
+
                 ft.replace(R.id.fragmentContainer, new ProfileFragment(), "PROFILE");
                 // Start the animated transition.
                 ft.commit();
+                break;
+
+            default:
                 break;
         }
     }

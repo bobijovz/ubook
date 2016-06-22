@@ -1,6 +1,7 @@
 package com.itseasyright.app.ubook;
 
 import android.support.annotation.IdRes;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -27,31 +28,46 @@ public class ContainerActivity extends AppCompatActivity implements OnMenuTabCli
 
     @Override
     public void onMenuTabSelected(@IdRes int menuItemId) {
+        // TODO: NV Add custom animations for switching of tabs
+        //for Animation
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+
         switch (menuItemId){
             case R.id.homeTabButton:
-                getSupportFragmentManager().beginTransaction().
-                        replace(R.id.fragmentContainer, new HomeFragment(), "HOME").
-                        commit();
+
+
+                ft.setCustomAnimations(R.anim.abc_fade_in, R.anim.abc_fade_out);
+                ft.replace(R.id.fragmentContainer, new HomeFragment(), "HOME");
+                // Start the animated transition.
+                ft.commit();
                 break;
+
             case R.id.plannerTabButton:
-                getSupportFragmentManager().beginTransaction().
-                        replace(R.id.fragmentContainer, new PlannerFragment(), "PLANNER").
-                        commit();
+                ft.setCustomAnimations(R.anim.abc_fade_in, R.anim.abc_fade_out);
+                ft.replace(R.id.fragmentContainer, new PlannerFragment(), "PLANNER");
+                // Start the animated transition.
+                ft.commit();
                 break;
+
             case R.id.exploreTabButton:
-                getSupportFragmentManager().beginTransaction().
-                        replace(R.id.fragmentContainer, new ExploreFragment(), "EXPLORE").
-                        commit();
+                ft.setCustomAnimations(R.anim.abc_fade_in, R.anim.abc_fade_out);
+                ft.replace(R.id.fragmentContainer, new ExploreFragment(), "EXPLORE");
+                // Start the animated transition.
+                ft.commit();
                 break;
+
             case R.id.networkTabButton:
-                getSupportFragmentManager().beginTransaction().
-                        replace(R.id.fragmentContainer, new NetworkFragment(), "NETWORK").
-                        commit();
+                ft.setCustomAnimations(R.anim.abc_fade_in, R.anim.abc_fade_out);
+                ft.replace(R.id.fragmentContainer, new NetworkFragment(), "NETWORK");
+                // Start the animated transition.
+                ft.commit();
                 break;
+
             case R.id.profileTabButton:
-                getSupportFragmentManager().beginTransaction().
-                        replace(R.id.fragmentContainer, new ProfileFragment(), "PROFILE").
-                        commit();
+                ft.setCustomAnimations(R.anim.abc_fade_in, R.anim.abc_fade_out);
+                ft.replace(R.id.fragmentContainer, new ProfileFragment(), "PROFILE");
+                // Start the animated transition.
+                ft.commit();
                 break;
         }
     }

@@ -31,11 +31,12 @@ public class ProfileFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_profile, container, false);
         viewPager = (ViewPager) view.findViewById(R.id.profileViewPager);
         tabLayout = (TabLayout) view.findViewById(R.id.profileTabButton);
-        tabLayout.addTab(tabLayout.newTab().setText("FEED"));
-        tabLayout.addTab(tabLayout.newTab().setText("INFO"));
-        tabLayout.addTab(tabLayout.newTab().setText("ACHIEVEMENT"));
-        tabLayout.addTab(tabLayout.newTab().setText("EXPERIENCE"));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_rss_feed_black_24dp));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_info_black_24dp));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_collections_bookmark_black_24dp));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_work_black_24dp));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+
         viewPagerAdapter = new ViewPagerAdapter(getFragmentManager());
         viewPagerAdapter.addFragment(new ProfileFeed(), "FEED");
         viewPagerAdapter.addFragment(new ProfileInformation(), "INFO");

@@ -1,4 +1,4 @@
-package com.itseasyright.app.ubook.views.adapters;
+package com.itseasyright.app.ubook.views;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

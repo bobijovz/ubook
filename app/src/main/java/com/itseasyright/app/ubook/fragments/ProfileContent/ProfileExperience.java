@@ -10,13 +10,12 @@ import android.view.ViewGroup;
 import com.itseasyright.app.ubook.R;
 
 /**
- * Created by jovijovs on 23/06/2016.
+ * Created by jovijovs on 24/06/2016.
  */
-public class ProfileInformation extends Fragment {
-
+public class ProfileExperience extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_profile_information, container, false);
+        return inflater.inflate(R.layout.fragment_profile_experience, container, false);
     }
 }

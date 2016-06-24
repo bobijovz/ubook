@@ -6,11 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.itseasyright.app.ubook.ContainerActivity">
-    <FrameLayout
-        android:id="@+id/fragmentContainer"
+    <com.itseasyright.app.ubook.views.adapters.NonSwipeableViewPager
+        android:id="@+id/view_pager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1">
-
-    </FrameLayout>
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 </LinearLayout>

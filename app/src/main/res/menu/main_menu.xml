@@ -20,5 +20,4 @@
         android:id="@+id/profileTabButton"
         android:icon="@drawable/ic_face_white_24dp"
         android:title="Profile"/>
-
 </menu>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linear_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingEnd="25dp"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:paddingStart="25dp">
+
+            <TextView
+                android:id="@+id/text_profile_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="Steve Jobs"
+                android:textSize="45sp" />
+
+
+            <TextView
+                android:id="@+id/text_profile_summary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="The purpose of a resume is to sell your professional expertise to the hiring manger. The summary statement, professional profile, or career objective is the first advertisement of your skills and expertise that a hiring manger will see. Each one has a slightly different intent and feel." />
+
+
+            <TextView
+                android:id="@+id/text_profile_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:autoLink="email"
+                android:drawableLeft="@drawable/ic_email_black_18dp"
+                android:drawablePadding="10dp"
+                android:drawableStart="@drawable/ic_email_black_18dp"
+                android:text="stevejobs@gmail.com"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/text_profile_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:autoLink="phone"
+                android:drawableLeft="@drawable/ic_phone_black_18dp"
+                android:drawablePadding="10dp"
+                android:drawableStart="@drawable/ic_phone_black_18dp"
+                android:text="+639061231523"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/text_profile_birth_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:drawableLeft="@drawable/ic_cake_black_18dp"
+                android:drawablePadding="10dp"
+                android:drawableStart="@drawable/ic_cake_black_18dp"
+                android:text="March 14, 1995"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/text_profile_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:autoLink="map"
+                android:drawableLeft="@drawable/ic_location_on_black_18dp"
+                android:drawablePadding="10dp"
+                android:drawableStart="@drawable/ic_location_on_black_18dp"
+                android:text="620 Eighth Avenue New York, NY 10018"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/text_profile_website"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:autoLink="web"
+                android:drawableLeft="@drawable/ic_public_black_18dp"
+                android:drawablePadding="10dp"
+                android:drawableStart="@drawable/ic_public_black_18dp"
+                android:text="www.stevejobs.com"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

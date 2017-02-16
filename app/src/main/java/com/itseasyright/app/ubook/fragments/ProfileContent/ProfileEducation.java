@@ -1,4 +1,4 @@
-package com.itseasyright.app.ubook.fragments;
+package com.itseasyright.app.ubook.fragments.ProfileContent;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,18 +10,13 @@ import android.view.ViewGroup;
 import com.itseasyright.app.ubook.R;
 
 /**
- * Created by jovijovs on 21/06/2016.
+ * Created by Nico on 2/16/2017.
  */
-public class ExploreFragment extends Fragment {
+
+public class ProfileEducation extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_explore, container, false);
+        return inflater.inflate(R.layout.fragment_education, container, false);
     }
-
-    @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-    }
-
 }
